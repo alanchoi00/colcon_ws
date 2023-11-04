@@ -1,0 +1,150 @@
+[0.000000] (-) TimerEvent: {}
+[0.000669] (cv_basics) JobQueued: {'identifier': 'cv_basics', 'dependencies': OrderedDict()}
+[0.000747] (wall_follower) JobQueued: {'identifier': 'wall_follower', 'dependencies': OrderedDict()}
+[0.000784] (cv_basics) JobStarted: {'identifier': 'cv_basics'}
+[0.099619] (-) TimerEvent: {}
+[0.147657] (wall_follower) JobStarted: {'identifier': 'wall_follower'}
+[0.200036] (-) TimerEvent: {}
+[0.302910] (-) TimerEvent: {}
+[0.403908] (-) TimerEvent: {}
+[0.504517] (-) TimerEvent: {}
+[0.540213] (wall_follower) JobProgress: {'identifier': 'wall_follower', 'progress': 'cmake'}
+[0.540821] (wall_follower) JobProgress: {'identifier': 'wall_follower', 'progress': 'build'}
+[0.541911] (wall_follower) Command: {'cmd': ['/bin/cmake', '--build', '/home/alan/colcon_ws/build/wall_follower', '--', '-j8', '-l8'], 'cwd': '/home/alan/colcon_ws/build/wall_follower', 'env': OrderedDict([('LESSOPEN', '| /bin/lesspipe %s'), ('LANGUAGE', 'en_AU:en'), ('USER', 'alan'), ('SSH_AGENT_PID', '1940'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib'), ('HOME', '/home/alan'), ('OLDPWD', '/home/alan/colcon_ws'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '985'), ('XRDP_PULSE_SOURCE_SOCKET', 'xrdp_chansrv_audio_in_socket_10'), ('XRDP_PULSE_SINK_SOCKET', 'xrdp_chansrv_audio_out_socket_10'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('PULSE_SCRIPT', '/etc/xrdp/pulse/default.pa'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/alan/colcon_ws/install'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'alan'), ('JOURNAL_STREAM', '9:25570'), ('_', '/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/foxy/bin:/sbin:/bin:/usr/bin:/usr/local/bin:/snap/bin'), ('SESSION_MANAGER', 'local/alan-Virtual-Machine:@/tmp/.ICE-unix/2102,unix/alan-Virtual-Machine:/tmp/.ICE-unix/2102'), ('INVOCATION_ID', 'd21ff307189c468b95f7185aa2a4bcb1'), ('XDG_MENU_PREFIX', 'gnome-'), ('XRDP_SOCKET_PATH', '/run/xrdp/sockdir'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/b408e2aa_edbd_4ef4_a3ed_194e1057fef6'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':10.0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.86'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '42'), ('AMENT_PREFIX_PATH', '/home/alan/colcon_ws/install/cv_basics:/home/alan/colcon_ws/install/wall_follower:/opt/ros/foxy'), ('UID', '1000'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('LESSCLOSE', '/bin/lesspipe %s %s'), ('XRDP_SESSION', '1'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/alan/colcon_ws/build/wall_follower'), ('TURTLEBOT3_MODEL', 'waffle_pi'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/alan/colcon_ws/build/cv_basics:/home/alan/colcon_ws/install/cv_basics/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/alan/colcon_ws/install/wall_follower:/home/alan/colcon_ws/install/cv_basics:/opt/ros/foxy')]), 'shell': False}
+[0.583856] (wall_follower) StdoutLine: {'line': b'-- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)\n'}
+[0.604737] (-) TimerEvent: {}
+[0.607422] (wall_follower) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /bin/python3\n'}
+[0.704953] (-) TimerEvent: {}
+[0.753166] (wall_follower) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.758454] (wall_follower) StdoutLine: {'line': b'-- Found geometry_msgs: 2.0.5 (/opt/ros/foxy/share/geometry_msgs/cmake)\n'}
+[0.775271] (wall_follower) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.777929] (wall_follower) StdoutLine: {'line': b'-- Found rosidl_adapter: 1.3.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)\n'}
+[0.805188] (-) TimerEvent: {}
+[0.853684] (cv_basics) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'develop', '--editable', '--build-directory', '/home/alan/colcon_ws/build/cv_basics/build', '--no-deps', 'install_data'], 'cwd': '/home/alan/colcon_ws/build/cv_basics', 'env': {'LESSOPEN': '| /bin/lesspipe %s', 'LANGUAGE': 'en_AU:en', 'USER': 'alan', 'SSH_AGENT_PID': '1940', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib', 'HOME': '/home/alan', 'OLDPWD': '/home/alan/colcon_ws', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '985', 'XRDP_PULSE_SOURCE_SOCKET': 'xrdp_chansrv_audio_in_socket_10', 'XRDP_PULSE_SINK_SOCKET': 'xrdp_chansrv_audio_out_socket_10', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'PULSE_SCRIPT': '/etc/xrdp/pulse/default.pa', 'IM_CONFIG_PHASE': '1', 'COLCON_PREFIX_PATH': '/home/alan/colcon_ws/install', 'ROS_DISTRO': 'foxy', 'LOGNAME': 'alan', 'JOURNAL_STREAM': '9:25570', '_': '/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/foxy/bin:/sbin:/bin:/usr/bin:/usr/local/bin:/snap/bin', 'SESSION_MANAGER': 'local/alan-Virtual-Machine:@/tmp/.ICE-unix/2102,unix/alan-Virtual-Machine:/tmp/.ICE-unix/2102', 'INVOCATION_ID': 'd21ff307189c468b95f7185aa2a4bcb1', 'XDG_MENU_PREFIX': 'gnome-', 'XRDP_SOCKET_PATH': '/run/xrdp/sockdir', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/b408e2aa_edbd_4ef4_a3ed_194e1057fef6', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':10.0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.86', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'ROS_DOMAIN_ID': '42', 'AMENT_PREFIX_PATH': '/home/alan/colcon_ws/install/cv_basics:/home/alan/colcon_ws/install/wall_follower:/opt/ros/foxy', 'UID': '1000', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'LESSCLOSE': '/bin/lesspipe %s %s', 'XRDP_SESSION': '1', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/alan/colcon_ws/build/cv_basics', 'TURTLEBOT3_MODEL': 'waffle_pi', 'LC_ALL': 'en_US.UTF-8', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/alan/colcon_ws/build/cv_basics/prefix_override:/home/alan/colcon_ws/install/cv_basics/lib/python3.8/site-packages:/home/alan/colcon_ws/build/cv_basics:/home/alan/colcon_ws/install/cv_basics/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages', 'COLCON': '1', 'VTE_VERSION': '6003', 'CMAKE_PREFIX_PATH': '/home/alan/colcon_ws/install/wall_follower'}, 'shell': False}
+[0.884874] (wall_follower) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.905349] (-) TimerEvent: {}
+[0.954105] (wall_follower) StdoutLine: {'line': b'-- Found nav_msgs: 2.0.5 (/opt/ros/foxy/share/nav_msgs/cmake)\n'}
+[1.005488] (-) TimerEvent: {}
+[1.013452] (wall_follower) StdoutLine: {'line': b'-- Found rclcpp: 2.4.3 (/opt/ros/foxy/share/rclcpp/cmake)\n'}
+[1.032445] (cv_basics) StdoutLine: {'line': b'running develop\n'}
+[1.042261] (wall_follower) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 1.0.4 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)\n'}
+[1.043203] (wall_follower) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[1.105648] (-) TimerEvent: {}
+[1.132959] (cv_basics) StdoutLine: {'line': b'running egg_info\n'}
+[1.133253] (cv_basics) StdoutLine: {'line': b'writing cv_basics.egg-info/PKG-INFO\n'}
+[1.133440] (cv_basics) StdoutLine: {'line': b'writing dependency_links to cv_basics.egg-info/dependency_links.txt\n'}
+[1.133813] (cv_basics) StdoutLine: {'line': b'writing entry points to cv_basics.egg-info/entry_points.txt\n'}
+[1.134103] (cv_basics) StdoutLine: {'line': b'writing requirements to cv_basics.egg-info/requires.txt\n'}
+[1.134216] (cv_basics) StdoutLine: {'line': b'writing top-level names to cv_basics.egg-info/top_level.txt\n'}
+[1.160458] (cv_basics) StdoutLine: {'line': b"reading manifest file 'cv_basics.egg-info/SOURCES.txt'\n"}
+[1.161500] (cv_basics) StdoutLine: {'line': b"writing manifest file 'cv_basics.egg-info/SOURCES.txt'\n"}
+[1.164243] (wall_follower) StdoutLine: {'line': b'-- Found sensor_msgs: 2.0.5 (/opt/ros/foxy/share/sensor_msgs/cmake)\n'}
+[1.188416] (cv_basics) StdoutLine: {'line': b'running build_ext\n'}
+[1.188840] (cv_basics) StdoutLine: {'line': b'Creating /home/alan/colcon_ws/install/cv_basics/lib/python3.8/site-packages/cv-basics.egg-link (link to .)\n'}
+[1.189218] (cv_basics) StdoutLine: {'line': b'Installing img_publisher script to /home/alan/colcon_ws/install/cv_basics/lib/cv_basics\n'}
+[1.189776] (cv_basics) StdoutLine: {'line': b'Installing img_subscriber script to /home/alan/colcon_ws/install/cv_basics/lib/cv_basics\n'}
+[1.189894] (cv_basics) StdoutLine: {'line': b'\n'}
+[1.190079] (cv_basics) StdoutLine: {'line': b'Installed /home/alan/colcon_ws/build/cv_basics\n'}
+[1.190147] (cv_basics) StdoutLine: {'line': b'running install_data\n'}
+[1.205908] (-) TimerEvent: {}
+[1.210723] (cv_basics) CommandEnded: {'returncode': 0}
+[1.221872] (wall_follower) StdoutLine: {'line': b'-- Found tf2: 0.13.14 (/opt/ros/foxy/share/tf2/cmake)\n'}
+[1.287519] (wall_follower) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.295671] (wall_follower) StdoutLine: {'line': b'-- Generating done\n'}
+[1.297472] (wall_follower) StdoutLine: {'line': b'-- Build files have been written to: /home/alan/colcon_ws/build/wall_follower\n'}
+[1.306117] (-) TimerEvent: {}
+[1.326080] (wall_follower) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target wall_follower\x1b[0m\n'}
+[1.334601] (cv_basics) JobEnded: {'identifier': 'cv_basics', 'rc': 0}
+[1.347977] (wall_follower) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/wall_follower.dir/src/wall_follower.cpp.o\x1b[0m\n'}
+[1.349586] (wall_follower) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/wall_follower.dir/src/circle_model.cpp.o\x1b[0m\n'}
+[1.406273] (-) TimerEvent: {}
+[1.506745] (-) TimerEvent: {}
+[1.607183] (-) TimerEvent: {}
+[1.707720] (-) TimerEvent: {}
+[1.808231] (-) TimerEvent: {}
+[1.908860] (-) TimerEvent: {}
+[2.009543] (-) TimerEvent: {}
+[2.110195] (-) TimerEvent: {}
+[2.210672] (-) TimerEvent: {}
+[2.311230] (-) TimerEvent: {}
+[2.411862] (-) TimerEvent: {}
+[2.512501] (-) TimerEvent: {}
+[2.613338] (-) TimerEvent: {}
+[2.713791] (-) TimerEvent: {}
+[2.814200] (-) TimerEvent: {}
+[2.914675] (-) TimerEvent: {}
+[3.015121] (-) TimerEvent: {}
+[3.115584] (-) TimerEvent: {}
+[3.216081] (-) TimerEvent: {}
+[3.316741] (-) TimerEvent: {}
+[3.417449] (-) TimerEvent: {}
+[3.518083] (-) TimerEvent: {}
+[3.618783] (-) TimerEvent: {}
+[3.719434] (-) TimerEvent: {}
+[3.820120] (-) TimerEvent: {}
+[3.920737] (-) TimerEvent: {}
+[4.021291] (-) TimerEvent: {}
+[4.122097] (-) TimerEvent: {}
+[4.222766] (-) TimerEvent: {}
+[4.323549] (-) TimerEvent: {}
+[4.424187] (-) TimerEvent: {}
+[4.524968] (-) TimerEvent: {}
+[4.626061] (-) TimerEvent: {}
+[4.726657] (-) TimerEvent: {}
+[4.827182] (-) TimerEvent: {}
+[4.927779] (-) TimerEvent: {}
+[5.028465] (-) TimerEvent: {}
+[5.129020] (-) TimerEvent: {}
+[5.229735] (-) TimerEvent: {}
+[5.330254] (-) TimerEvent: {}
+[5.430896] (-) TimerEvent: {}
+[5.531565] (-) TimerEvent: {}
+[5.632006] (-) TimerEvent: {}
+[5.732659] (-) TimerEvent: {}
+[5.833688] (-) TimerEvent: {}
+[5.934670] (-) TimerEvent: {}
+[6.035340] (-) TimerEvent: {}
+[6.135895] (-) TimerEvent: {}
+[6.236495] (-) TimerEvent: {}
+[6.337099] (-) TimerEvent: {}
+[6.437589] (-) TimerEvent: {}
+[6.538094] (-) TimerEvent: {}
+[6.638561] (-) TimerEvent: {}
+[6.739078] (-) TimerEvent: {}
+[6.839651] (-) TimerEvent: {}
+[6.940134] (-) TimerEvent: {}
+[6.950039] (wall_follower) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable wall_follower\x1b[0m\n'}
+[7.040321] (-) TimerEvent: {}
+[7.140750] (-) TimerEvent: {}
+[7.198686] (wall_follower) StdoutLine: {'line': b'[100%] Built target wall_follower\n'}
+[7.210233] (wall_follower) CommandEnded: {'returncode': 0}
+[7.234984] (wall_follower) JobProgress: {'identifier': 'wall_follower', 'progress': 'install'}
+[7.240907] (-) TimerEvent: {}
+[7.245964] (wall_follower) Command: {'cmd': ['/bin/cmake', '--install', '/home/alan/colcon_ws/build/wall_follower'], 'cwd': '/home/alan/colcon_ws/build/wall_follower', 'env': OrderedDict([('LESSOPEN', '| /bin/lesspipe %s'), ('LANGUAGE', 'en_AU:en'), ('USER', 'alan'), ('SSH_AGENT_PID', '1940'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib'), ('HOME', '/home/alan'), ('OLDPWD', '/home/alan/colcon_ws'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '985'), ('XRDP_PULSE_SOURCE_SOCKET', 'xrdp_chansrv_audio_in_socket_10'), ('XRDP_PULSE_SINK_SOCKET', 'xrdp_chansrv_audio_out_socket_10'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('PULSE_SCRIPT', '/etc/xrdp/pulse/default.pa'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/alan/colcon_ws/install'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'alan'), ('JOURNAL_STREAM', '9:25570'), ('_', '/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/foxy/bin:/sbin:/bin:/usr/bin:/usr/local/bin:/snap/bin'), ('SESSION_MANAGER', 'local/alan-Virtual-Machine:@/tmp/.ICE-unix/2102,unix/alan-Virtual-Machine:/tmp/.ICE-unix/2102'), ('INVOCATION_ID', 'd21ff307189c468b95f7185aa2a4bcb1'), ('XDG_MENU_PREFIX', 'gnome-'), ('XRDP_SOCKET_PATH', '/run/xrdp/sockdir'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/b408e2aa_edbd_4ef4_a3ed_194e1057fef6'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':10.0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.86'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '42'), ('AMENT_PREFIX_PATH', '/home/alan/colcon_ws/install/cv_basics:/home/alan/colcon_ws/install/wall_follower:/opt/ros/foxy'), ('UID', '1000'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('LESSCLOSE', '/bin/lesspipe %s %s'), ('XRDP_SESSION', '1'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/alan/colcon_ws/build/wall_follower'), ('TURTLEBOT3_MODEL', 'waffle_pi'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/alan/colcon_ws/build/cv_basics:/home/alan/colcon_ws/install/cv_basics/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/alan/colcon_ws/install/wall_follower:/home/alan/colcon_ws/install/cv_basics:/opt/ros/foxy')]), 'shell': False}
+[7.252798] (wall_follower) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[7.253293] (wall_follower) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[7.253638] (wall_follower) StdoutLine: {'line': b'-- Up-to-date symlink: /home/alan/colcon_ws/install/wall_follower/lib/wall_follower/wall_follower\n'}
+[7.254320] (wall_follower) StdoutLine: {'line': b'-- Symlinking: /home/alan/colcon_ws/install/wall_follower/include//circle_model/circle_model.hpp\n'}
+[7.261762] (wall_follower) StdoutLine: {'line': b'-- Up-to-date symlink: /home/alan/colcon_ws/install/wall_follower/include//wall_follower/wall_follower.hpp\n'}
+[7.262413] (wall_follower) StdoutLine: {'line': b'-- Up-to-date symlink: /home/alan/colcon_ws/install/wall_follower/share/ament_index/resource_index/package_run_dependencies/wall_follower\n'}
+[7.262884] (wall_follower) StdoutLine: {'line': b'-- Up-to-date symlink: /home/alan/colcon_ws/install/wall_follower/share/ament_index/resource_index/parent_prefix_path/wall_follower\n'}
+[7.263375] (wall_follower) StdoutLine: {'line': b'-- Up-to-date symlink: /home/alan/colcon_ws/install/wall_follower/share/wall_follower/environment/ament_prefix_path.sh\n'}
+[7.263516] (wall_follower) StdoutLine: {'line': b'-- Up-to-date symlink: /home/alan/colcon_ws/install/wall_follower/share/wall_follower/environment/ament_prefix_path.dsv\n'}
+[7.263629] (wall_follower) StdoutLine: {'line': b'-- Up-to-date symlink: /home/alan/colcon_ws/install/wall_follower/share/wall_follower/environment/path.sh\n'}
+[7.263754] (wall_follower) StdoutLine: {'line': b'-- Up-to-date symlink: /home/alan/colcon_ws/install/wall_follower/share/wall_follower/environment/path.dsv\n'}
+[7.263875] (wall_follower) StdoutLine: {'line': b'-- Up-to-date symlink: /home/alan/colcon_ws/install/wall_follower/share/wall_follower/local_setup.bash\n'}
+[7.264012] (wall_follower) StdoutLine: {'line': b'-- Up-to-date symlink: /home/alan/colcon_ws/install/wall_follower/share/wall_follower/local_setup.sh\n'}
+[7.264092] (wall_follower) StdoutLine: {'line': b'-- Up-to-date symlink: /home/alan/colcon_ws/install/wall_follower/share/wall_follower/local_setup.zsh\n'}
+[7.264153] (wall_follower) StdoutLine: {'line': b'-- Up-to-date symlink: /home/alan/colcon_ws/install/wall_follower/share/wall_follower/local_setup.dsv\n'}
+[7.264478] (wall_follower) StdoutLine: {'line': b'-- Symlinking: /home/alan/colcon_ws/install/wall_follower/share/wall_follower/package.dsv\n'}
+[7.272940] (wall_follower) StdoutLine: {'line': b'-- Up-to-date symlink: /home/alan/colcon_ws/install/wall_follower/share/ament_index/resource_index/packages/wall_follower\n'}
+[7.273549] (wall_follower) StdoutLine: {'line': b'-- Up-to-date symlink: /home/alan/colcon_ws/install/wall_follower/share/wall_follower/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[7.273855] (wall_follower) StdoutLine: {'line': b'-- Up-to-date symlink: /home/alan/colcon_ws/install/wall_follower/share/wall_follower/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[7.274073] (wall_follower) StdoutLine: {'line': b'-- Up-to-date symlink: /home/alan/colcon_ws/install/wall_follower/share/wall_follower/cmake/wall_followerConfig.cmake\n'}
+[7.274299] (wall_follower) StdoutLine: {'line': b'-- Up-to-date symlink: /home/alan/colcon_ws/install/wall_follower/share/wall_follower/cmake/wall_followerConfig-version.cmake\n'}
+[7.274649] (wall_follower) StdoutLine: {'line': b'-- Up-to-date symlink: /home/alan/colcon_ws/install/wall_follower/share/wall_follower/package.xml\n'}
+[7.276909] (wall_follower) CommandEnded: {'returncode': 0}
+[7.343095] (-) TimerEvent: {}
+[7.445287] (-) TimerEvent: {}
+[7.486896] (wall_follower) JobEnded: {'identifier': 'wall_follower', 'rc': 0}
+[7.488910] (-) EventReactorShutdown: {}
