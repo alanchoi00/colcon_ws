@@ -1,0 +1,9 @@
+[35m[1mScanning dependencies of target wall_follower[0m
+[ 33%] [32mBuilding CXX object CMakeFiles/wall_follower.dir/src/circle_model.cpp.o[0m
+[ 66%] [32m[1mLinking CXX executable wall_follower[0m
+/usr/bin/ld: CMakeFiles/wall_follower.dir/src/circle_model.cpp.o: in function `CircleModel::circleDetection(std::vector<CartesianPoint, std::allocator<CartesianPoint> > const&, int, int, double)':
+circle_model.cpp:(.text+0x982): undefined reference to `CircleModel::fitCircleModelToPoints(std::vector<CartesianPoint, std::allocator<CartesianPoint> > const&)'
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/wall_follower.dir/build.make:163: wall_follower] Error 1
+make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/wall_follower.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

@@ -1,0 +1,55 @@
+[0.422s] Invoking command in '/home/rsa/colcon_ws/build/learning_tf2_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rsa/colcon_ws/install/cv_basics:/opt/ros/foxy /usr/bin/cmake --build /home/rsa/colcon_ws/build/learning_tf2_cpp -- -j16 -l16
+[0.471s] -- Found ament_cmake: 0.9.9 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.508s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.711s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.723s] -- Found geometry_msgs: 2.0.5 (/opt/ros/foxy/share/geometry_msgs/cmake)
+[0.753s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.762s] -- Found rosidl_adapter: 1.2.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[0.926s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.015s] -- Found rclcpp: 2.4.1 (/opt/ros/foxy/share/rclcpp/cmake)
+[1.067s] -- Found rmw_implementation_cmake: 1.0.3 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+[1.069s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.212s] -- Found tf2: 0.13.13 (/opt/ros/foxy/share/tf2/cmake)
+[1.224s] -- Found tf2_ros: 0.13.13 (/opt/ros/foxy/share/tf2_ros/cmake)
+[1.595s] -- Found turtlesim: 1.2.5 (/opt/ros/foxy/share/turtlesim/cmake)
+[1.687s] -- Found ament_lint_auto: 0.9.6 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+[1.827s] -- Added test 'copyright' to check source files copyright and LICENSE
+[1.836s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.837s] -- Configured cppcheck include dirs: 
+[1.837s] -- Configured cppcheck exclude dirs and/or files: 
+[1.845s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[1.845s] -- Configured cpplint exclude dirs and/or files: 
+[1.846s] -- Added test 'flake8' to check Python code syntax and style conventions
+[1.848s] -- Added test 'lint_cmake' to check CMake code style
+[1.849s] -- Added test 'pep257' to check Python code against some of the style conventions in PEP 257
+[1.855s] -- Added test 'uncrustify' to check C / C++ code style
+[1.855s] -- Configured uncrustify additional arguments: 
+[1.857s] -- Added test 'xmllint' to check XML markup files
+[1.862s] -- Configuring done
+[1.880s] -- Generating done
+[1.882s] -- Build files have been written to: /home/rsa/colcon_ws/build/learning_tf2_cpp
+[1.916s] [35m[1mScanning dependencies of target static_turtle_tf2_broadcaster[0m
+[1.971s] [ 50%] [32mBuilding CXX object CMakeFiles/static_turtle_tf2_broadcaster.dir/src/static_turtle_tf2_broadcaster.cpp.o[0m
+[6.527s] [100%] [32m[1mLinking CXX executable static_turtle_tf2_broadcaster[0m
+[6.778s] [100%] Built target static_turtle_tf2_broadcaster
+[6.791s] Invoked command in '/home/rsa/colcon_ws/build/learning_tf2_cpp' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rsa/colcon_ws/install/cv_basics:/opt/ros/foxy /usr/bin/cmake --build /home/rsa/colcon_ws/build/learning_tf2_cpp -- -j16 -l16
+[6.837s] Invoking command in '/home/rsa/colcon_ws/build/learning_tf2_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rsa/colcon_ws/install/cv_basics:/opt/ros/foxy /usr/bin/cmake --install /home/rsa/colcon_ws/build/learning_tf2_cpp
+[6.845s] -- Install configuration: ""
+[6.845s] -- Execute custom install script
+[6.845s] -- Symlinking: /home/rsa/colcon_ws/install/learning_tf2_cpp/lib/learning_tf2_cpp/static_turtle_tf2_broadcaster
+[6.857s] -- Up-to-date symlink: /home/rsa/colcon_ws/install/learning_tf2_cpp/share/ament_index/resource_index/package_run_dependencies/learning_tf2_cpp
+[6.858s] -- Up-to-date symlink: /home/rsa/colcon_ws/install/learning_tf2_cpp/share/ament_index/resource_index/parent_prefix_path/learning_tf2_cpp
+[6.860s] -- Up-to-date symlink: /home/rsa/colcon_ws/install/learning_tf2_cpp/share/learning_tf2_cpp/environment/ament_prefix_path.sh
+[6.860s] -- Up-to-date symlink: /home/rsa/colcon_ws/install/learning_tf2_cpp/share/learning_tf2_cpp/environment/ament_prefix_path.dsv
+[6.861s] -- Up-to-date symlink: /home/rsa/colcon_ws/install/learning_tf2_cpp/share/learning_tf2_cpp/environment/path.sh
+[6.861s] -- Up-to-date symlink: /home/rsa/colcon_ws/install/learning_tf2_cpp/share/learning_tf2_cpp/environment/path.dsv
+[6.862s] -- Up-to-date symlink: /home/rsa/colcon_ws/install/learning_tf2_cpp/share/learning_tf2_cpp/local_setup.bash
+[6.863s] -- Up-to-date symlink: /home/rsa/colcon_ws/install/learning_tf2_cpp/share/learning_tf2_cpp/local_setup.sh
+[6.864s] -- Up-to-date symlink: /home/rsa/colcon_ws/install/learning_tf2_cpp/share/learning_tf2_cpp/local_setup.zsh
+[6.865s] -- Up-to-date symlink: /home/rsa/colcon_ws/install/learning_tf2_cpp/share/learning_tf2_cpp/local_setup.dsv
+[6.865s] -- Symlinking: /home/rsa/colcon_ws/install/learning_tf2_cpp/share/learning_tf2_cpp/package.dsv
+[6.875s] -- Up-to-date symlink: /home/rsa/colcon_ws/install/learning_tf2_cpp/share/ament_index/resource_index/packages/learning_tf2_cpp
+[6.876s] -- Up-to-date symlink: /home/rsa/colcon_ws/install/learning_tf2_cpp/share/learning_tf2_cpp/cmake/learning_tf2_cppConfig.cmake
+[6.876s] -- Up-to-date symlink: /home/rsa/colcon_ws/install/learning_tf2_cpp/share/learning_tf2_cpp/cmake/learning_tf2_cppConfig-version.cmake
+[6.877s] -- Up-to-date symlink: /home/rsa/colcon_ws/install/learning_tf2_cpp/share/learning_tf2_cpp/package.xml
+[6.880s] Invoked command in '/home/rsa/colcon_ws/build/learning_tf2_cpp' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rsa/colcon_ws/install/cv_basics:/opt/ros/foxy /usr/bin/cmake --install /home/rsa/colcon_ws/build/learning_tf2_cpp

@@ -1,0 +1,4 @@
+[01m[K/home/rsa/colcon_ws/src/wall_follower/src/wall_follower.cpp:[m[K In member function ‘[01m[Kvoid WallFollower::update_callback()[m[K’:
+[01m[K/home/rsa/colcon_ws/src/wall_follower/src/wall_follower.cpp:252:10:[m[K [01;35m[Kwarning: [m[K‘[01m[Kmax_forward_dist[m[K’ is used uninitialized in this function [[01;35m[K-Wuninitialized[m[K]
+  252 |   double [01;35m[Kmax_forward_dist[m[K = max_forward_dist;
+      |          [01;35m[K^~~~~~~~~~~~~~~~[m[K

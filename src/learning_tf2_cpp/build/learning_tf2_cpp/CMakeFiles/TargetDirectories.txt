@@ -1,0 +1,10 @@
+/home/rsa/colcon_ws/src/learning_tf2_cpp/build/learning_tf2_cpp/CMakeFiles/install/strip.dir
+/home/rsa/colcon_ws/src/learning_tf2_cpp/build/learning_tf2_cpp/CMakeFiles/install/local.dir
+/home/rsa/colcon_ws/src/learning_tf2_cpp/build/learning_tf2_cpp/CMakeFiles/install.dir
+/home/rsa/colcon_ws/src/learning_tf2_cpp/build/learning_tf2_cpp/CMakeFiles/list_install_components.dir
+/home/rsa/colcon_ws/src/learning_tf2_cpp/build/learning_tf2_cpp/CMakeFiles/rebuild_cache.dir
+/home/rsa/colcon_ws/src/learning_tf2_cpp/build/learning_tf2_cpp/CMakeFiles/edit_cache.dir
+/home/rsa/colcon_ws/src/learning_tf2_cpp/build/learning_tf2_cpp/CMakeFiles/test.dir
+/home/rsa/colcon_ws/src/learning_tf2_cpp/build/learning_tf2_cpp/CMakeFiles/static_turtle_tf2_broadcaster.dir
+/home/rsa/colcon_ws/src/learning_tf2_cpp/build/learning_tf2_cpp/CMakeFiles/learning_tf2_cpp_uninstall.dir
+/home/rsa/colcon_ws/src/learning_tf2_cpp/build/learning_tf2_cpp/CMakeFiles/uninstall.dir

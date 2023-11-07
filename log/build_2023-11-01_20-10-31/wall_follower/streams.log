@@ -1,0 +1,22 @@
+[0.195s] Invoking command in '/home/rsa/colcon_ws/build/wall_follower': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rsa/colcon_ws/install/cv_basics:/opt/ros/foxy /usr/bin/cmake --build /home/rsa/colcon_ws/build/wall_follower -- -j16 -l16
+[0.233s] [35m[1mScanning dependencies of target wall_follower[0m
+[0.260s] [ 33%] [32mBuilding CXX object CMakeFiles/wall_follower.dir/src/circle_model.cpp.o[0m
+[0.260s] [ 66%] [32mBuilding CXX object CMakeFiles/wall_follower.dir/src/wall_follower.cpp.o[0m
+[0.384s] [01m[K/home/rsa/colcon_ws/src/wall_follower/src/wall_follower.cpp:21:10:[m[K [01;31m[Kfatal error: [m[Kwall_follower/circle_model.hpp: No such file or directory
+[0.384s]    21 | #include [01;31m[K"wall_follower/circle_model.hpp"[m[K
+[0.384s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[0.384s] compilation terminated.
+[0.384s] make[2]: *** [CMakeFiles/wall_follower.dir/build.make:63: CMakeFiles/wall_follower.dir/src/wall_follower.cpp.o] Error 1
+[0.384s] make[2]: *** Waiting for unfinished jobs....
+[1.739s] [01m[K/home/rsa/colcon_ws/src/wall_follower/src/circle_model.cpp:[m[K In member function ‘[01m[KCircleModel CircleModel::circleDetection(const std::vector<CartesianPoint>&, int, int, double)[m[K’:
+[1.740s] [01m[K/home/rsa/colcon_ws/src/wall_follower/src/circle_model.cpp:98:76:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Klong unsigned int[m[K’ and ‘[01m[Kint[m[K’ [[01;35m[K-Wsign-compare[m[K]
+[1.740s]    98 |         if([01;35m[Kpoints.size() - (std::distance(it, points.end()) + inlierCount) < bestInlierCount[m[K) {
+[1.740s]       |            [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~[m[K
+[1.804s] /home/rsa/colcon_ws/src/wall_follower/src/circle_model.cpp: In instantiation of ‘[01m[KOutputIt sample(InputIt, InputIt, OutputIt, size_t, RNG&&) [with InputIt = __gnu_cxx::__normal_iterator<const CartesianPoint*, std::vector<CartesianPoint> >; OutputIt = std::back_insert_iterator<std::vector<CartesianPoint> >; RNG = std::mersenne_twister_engine<long unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>&; size_t = long unsigned int][m[K’:
+[1.804s] [01m[K/home/rsa/colcon_ws/src/wall_follower/src/circle_model.cpp:89:91:[m[K   required from here
+[1.804s] [01m[K/home/rsa/colcon_ws/src/wall_follower/src/circle_model.cpp:68:62:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kstd::uniform_int_distribution<int>::result_type[m[K’ {aka ‘[01m[Kint[m[K’} and ‘[01m[Ksize_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+[1.804s]    68 |     if ([01;35m[Kstd::uniform_int_distribution<>(0, --remaining)(rng) < m[m[K) {
+[1.804s]       |         [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~[m[K
+[2.189s] make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/wall_follower.dir/all] Error 2
+[2.190s] make: *** [Makefile:141: all] Error 2
+[2.194s] Invoked command in '/home/rsa/colcon_ws/build/wall_follower' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rsa/colcon_ws/install/cv_basics:/opt/ros/foxy /usr/bin/cmake --build /home/rsa/colcon_ws/build/wall_follower -- -j16 -l16

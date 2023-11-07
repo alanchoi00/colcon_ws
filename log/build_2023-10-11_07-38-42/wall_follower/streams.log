@@ -1,0 +1,47 @@
+[0.031s] Invoking command in '/home/rsa/colcon_ws/build/wall_follower': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake /home/rsa/colcon_ws/src/wall_follower -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/rsa/colcon_ws/install/wall_follower
+[0.042s] -- Found ament_cmake: 0.9.9 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.066s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.272s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.277s] -- Found geometry_msgs: 2.0.5 (/opt/ros/foxy/share/geometry_msgs/cmake)
+[0.304s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.307s] -- Found rosidl_adapter: 1.2.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[0.445s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.543s] -- Found nav_msgs: 2.0.5 (/opt/ros/foxy/share/nav_msgs/cmake)
+[0.644s] -- Found rclcpp: 2.4.1 (/opt/ros/foxy/share/rclcpp/cmake)
+[0.683s] -- Found rmw_implementation_cmake: 1.0.3 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+[0.685s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.819s] -- Found sensor_msgs: 2.0.5 (/opt/ros/foxy/share/sensor_msgs/cmake)
+[0.913s] -- Found tf2: 0.13.13 (/opt/ros/foxy/share/tf2/cmake)
+[1.006s] -- Configuring done
+[1.014s] -- Generating done
+[1.015s] -- Build files have been written to: /home/rsa/colcon_ws/build/wall_follower
+[1.025s] Invoked command in '/home/rsa/colcon_ws/build/wall_follower' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake /home/rsa/colcon_ws/src/wall_follower -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/rsa/colcon_ws/install/wall_follower
+[1.026s] Invoking command in '/home/rsa/colcon_ws/build/wall_follower': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/rsa/colcon_ws/build/wall_follower -- -j8 -l8
+[1.071s] [35m[1mScanning dependencies of target wall_follower[0m
+[1.103s] [ 50%] [32mBuilding CXX object CMakeFiles/wall_follower.dir/src/wall_follower.cpp.o[0m
+[8.249s] [100%] [32m[1mLinking CXX executable wall_follower[0m
+[8.565s] [100%] Built target wall_follower
+[8.576s] Invoked command in '/home/rsa/colcon_ws/build/wall_follower' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/rsa/colcon_ws/build/wall_follower -- -j8 -l8
+[8.611s] Invoking command in '/home/rsa/colcon_ws/build/wall_follower': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/rsa/colcon_ws/build/wall_follower
+[8.620s] -- Install configuration: ""
+[8.621s] -- Execute custom install script
+[8.621s] -- Symlinking: /home/rsa/colcon_ws/install/wall_follower/lib/wall_follower/wall_follower
+[8.631s] -- Symlinking: /home/rsa/colcon_ws/install/wall_follower/include//wall_follower/wall_follower.hpp
+[8.640s] -- Symlinking: /home/rsa/colcon_ws/install/wall_follower/share/ament_index/resource_index/package_run_dependencies/wall_follower
+[8.651s] -- Symlinking: /home/rsa/colcon_ws/install/wall_follower/share/ament_index/resource_index/parent_prefix_path/wall_follower
+[8.661s] -- Symlinking: /home/rsa/colcon_ws/install/wall_follower/share/wall_follower/environment/ament_prefix_path.sh
+[8.673s] -- Symlinking: /home/rsa/colcon_ws/install/wall_follower/share/wall_follower/environment/ament_prefix_path.dsv
+[8.682s] -- Symlinking: /home/rsa/colcon_ws/install/wall_follower/share/wall_follower/environment/path.sh
+[8.692s] -- Symlinking: /home/rsa/colcon_ws/install/wall_follower/share/wall_follower/environment/path.dsv
+[8.703s] -- Symlinking: /home/rsa/colcon_ws/install/wall_follower/share/wall_follower/local_setup.bash
+[8.712s] -- Symlinking: /home/rsa/colcon_ws/install/wall_follower/share/wall_follower/local_setup.sh
+[8.721s] -- Symlinking: /home/rsa/colcon_ws/install/wall_follower/share/wall_follower/local_setup.zsh
+[8.732s] -- Symlinking: /home/rsa/colcon_ws/install/wall_follower/share/wall_follower/local_setup.dsv
+[8.742s] -- Symlinking: /home/rsa/colcon_ws/install/wall_follower/share/wall_follower/package.dsv
+[8.750s] -- Symlinking: /home/rsa/colcon_ws/install/wall_follower/share/ament_index/resource_index/packages/wall_follower
+[8.760s] -- Symlinking: /home/rsa/colcon_ws/install/wall_follower/share/wall_follower/cmake/ament_cmake_export_include_directories-extras.cmake
+[8.768s] -- Symlinking: /home/rsa/colcon_ws/install/wall_follower/share/wall_follower/cmake/ament_cmake_export_dependencies-extras.cmake
+[8.777s] -- Symlinking: /home/rsa/colcon_ws/install/wall_follower/share/wall_follower/cmake/wall_followerConfig.cmake
+[8.790s] -- Symlinking: /home/rsa/colcon_ws/install/wall_follower/share/wall_follower/cmake/wall_followerConfig-version.cmake
+[8.801s] -- Symlinking: /home/rsa/colcon_ws/install/wall_follower/share/wall_follower/package.xml
+[8.812s] Invoked command in '/home/rsa/colcon_ws/build/wall_follower' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/rsa/colcon_ws/build/wall_follower

@@ -1,0 +1,57 @@
+[0.237s] Invoking command in '/home/rsa/colcon_ws/build/wall_follower': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rsa/colcon_ws/install/cv_basics:/opt/ros/foxy /usr/bin/cmake --build /home/rsa/colcon_ws/build/wall_follower -- -j16 -l16
+[0.275s] [35m[1mScanning dependencies of target wall_follower[0m
+[0.320s] [ 33%] [32mBuilding CXX object CMakeFiles/wall_follower.dir/src/wall_follower.cpp.o[0m
+[6.922s] [ 66%] [32m[1mLinking CXX executable wall_follower[0m
+[7.315s] /usr/bin/ld: CMakeFiles/wall_follower.dir/src/circle_model.cpp.o: in function `arma::lapack::laenv(int*, char*, char*, int*, int*, int*, int*, unsigned long, unsigned long)':
+[7.316s] circle_model.cpp:(.text._ZN4arma6lapack5laenvEPiPcS2_S1_S1_S1_S1_mm[_ZN4arma6lapack5laenvEPiPcS2_S1_S1_S1_S1_mm]+0x53): undefined reference to `wrapper2_ilaenv_'
+[7.316s] /usr/bin/ld: CMakeFiles/wall_follower.dir/src/circle_model.cpp.o: in function `void arma::lapack::trtrs<double>(char*, char*, char*, int*, int*, double const*, int*, double*, int*, int*)':
+[7.316s] circle_model.cpp:(.text._ZN4arma6lapack5trtrsIdEEvPcS2_S2_PiS3_PKT_S3_PS4_S3_S3_[_ZN4arma6lapack5trtrsIdEEvPcS2_S2_PiS3_PKT_S3_PS4_S3_S3_]+0x5c): undefined reference to `wrapper2_dtrtrs_'
+[7.316s] /usr/bin/ld: CMakeFiles/wall_follower.dir/src/circle_model.cpp.o: in function `void arma::lapack::gesv<double>(int*, int*, double*, int*, int*, double*, int*, int*)':
+[7.316s] circle_model.cpp:(.text._ZN4arma6lapack4gesvIdEEvPiS2_PT_S2_S2_S4_S2_S2_[_ZN4arma6lapack4gesvIdEEvPiS2_PT_S2_S2_S4_S2_S2_]+0x4c): undefined reference to `wrapper2_dgesv_'
+[7.316s] /usr/bin/ld: CMakeFiles/wall_follower.dir/src/circle_model.cpp.o: in function `void arma::lapack::gbsvx<double>(char*, char*, int*, int*, int*, int*, double*, int*, double*, int*, int*, char*, double*, double*, double*, int*, double*, int*, double*, double*, double*, double*, int*, int*)':
+[7.317s] circle_model.cpp:(.text._ZN4arma6lapack5gbsvxIdEEvPcS2_PiS3_S3_S3_PT_S3_S5_S3_S3_S2_S5_S5_S5_S3_S5_S3_S5_S5_S5_S5_S3_S3_[_ZN4arma6lapack5gbsvxIdEEvPcS2_PiS3_S3_S3_PT_S3_S5_S3_S3_S2_S5_S5_S5_S3_S5_S3_S5_S5_S5_S5_S3_S3_]+0x92): undefined reference to `wrapper2_dgbsvx_'
+[7.317s] /usr/bin/ld: CMakeFiles/wall_follower.dir/src/circle_model.cpp.o: in function `void arma::lapack::posvx<double>(char*, char*, int*, int*, double*, int*, double*, int*, char*, double*, double*, int*, double*, int*, double*, double*, double*, double*, int*, int*)':
+[7.317s] circle_model.cpp:(.text._ZN4arma6lapack5posvxIdEEvPcS2_PiS3_PT_S3_S5_S3_S2_S5_S5_S3_S5_S3_S5_S5_S5_S5_S3_S3_[_ZN4arma6lapack5posvxIdEEvPcS2_PiS3_PT_S3_S5_S3_S2_S5_S5_S3_S5_S3_S5_S5_S5_S5_S3_S3_]+0x7a): undefined reference to `wrapper2_dposvx_'
+[7.317s] /usr/bin/ld: CMakeFiles/wall_follower.dir/src/circle_model.cpp.o: in function `void arma::lapack::gesvx<double>(char*, char*, int*, int*, double*, int*, double*, int*, int*, char*, double*, double*, double*, int*, double*, int*, double*, double*, double*, double*, int*, int*)':
+[7.317s] circle_model.cpp:(.text._ZN4arma6lapack5gesvxIdEEvPcS2_PiS3_PT_S3_S5_S3_S3_S2_S5_S5_S5_S3_S5_S3_S5_S5_S5_S5_S3_S3_[_ZN4arma6lapack5gesvxIdEEvPcS2_PiS3_PT_S3_S5_S3_S3_S2_S5_S5_S5_S3_S5_S3_S5_S5_S5_S5_S3_S3_]+0x86): undefined reference to `wrapper2_dgesvx_'
+[7.317s] /usr/bin/ld: CMakeFiles/wall_follower.dir/src/circle_model.cpp.o: in function `arma::get_pod_type<double>::result arma::lapack::lansy<double>(char*, char*, int*, double*, int*, arma::get_pod_type<double>::result*)':
+[7.317s] circle_model.cpp:(.text._ZN4arma6lapack5lansyIdEENS_12get_pod_typeIT_E6resultEPcS6_PiPS3_S7_PS5_[_ZN4arma6lapack5lansyIdEENS_12get_pod_typeIT_E6resultEPcS6_PiPS3_S7_PS5_]+0x4a): undefined reference to `wrapper2_dlansy_'
+[7.317s] /usr/bin/ld: CMakeFiles/wall_follower.dir/src/circle_model.cpp.o: in function `void arma::lapack::potrf<double>(char*, int*, double*, int*, int*)':
+[7.317s] circle_model.cpp:(.text._ZN4arma6lapack5potrfIdEEvPcPiPT_S3_S3_[_ZN4arma6lapack5potrfIdEEvPcPiPT_S3_S3_]+0x41): undefined reference to `wrapper2_dpotrf_'
+[7.317s] /usr/bin/ld: CMakeFiles/wall_follower.dir/src/circle_model.cpp.o: in function `void arma::lapack::potrs<double>(char*, int*, int const*, double*, int*, double*, int*, int*)':
+[7.318s] circle_model.cpp:(.text._ZN4arma6lapack5potrsIdEEvPcPiPKiPT_S3_S7_S3_S3_[_ZN4arma6lapack5potrsIdEEvPcPiPKiPT_S3_S7_S3_S3_]+0x52): undefined reference to `wrapper2_dpotrs_'
+[7.318s] /usr/bin/ld: CMakeFiles/wall_follower.dir/src/circle_model.cpp.o: in function `arma::get_pod_type<double>::result arma::lapack::lange<double>(char*, int*, int*, double*, int*, arma::get_pod_type<double>::result*)':
+[7.318s] circle_model.cpp:(.text._ZN4arma6lapack5langeIdEENS_12get_pod_typeIT_E6resultEPcPiS7_PS3_S7_PS5_[_ZN4arma6lapack5langeIdEENS_12get_pod_typeIT_E6resultEPcPiS7_PS3_S7_PS5_]+0x4c): undefined reference to `wrapper2_dlange_'
+[7.318s] /usr/bin/ld: CMakeFiles/wall_follower.dir/src/circle_model.cpp.o: in function `void arma::lapack::getrf<double>(int*, int*, double*, int*, int*, int*)':
+[7.318s] circle_model.cpp:(.text._ZN4arma6lapack5getrfIdEEvPiS2_PT_S2_S2_S2_[_ZN4arma6lapack5getrfIdEEvPiS2_PT_S2_S2_S2_]+0x46): undefined reference to `wrapper2_dgetrf_'
+[7.318s] /usr/bin/ld: CMakeFiles/wall_follower.dir/src/circle_model.cpp.o: in function `void arma::lapack::getrs<double>(char*, int*, int*, double*, int*, int*, double*, int*, int*)':
+[7.318s] circle_model.cpp:(.text._ZN4arma6lapack5getrsIdEEvPcPiS3_PT_S3_S3_S5_S3_S3_[_ZN4arma6lapack5getrsIdEEvPcPiS3_PT_S3_S3_S5_S3_S3_]+0x51): undefined reference to `wrapper2_dgetrs_'
+[7.318s] /usr/bin/ld: CMakeFiles/wall_follower.dir/src/circle_model.cpp.o: in function `void arma::lapack::gelsd<double>(int*, int*, int*, double*, int*, double*, int*, double*, double*, int*, double*, int*, int*, int*)':
+[7.318s] circle_model.cpp:(.text._ZN4arma6lapack5gelsdIdEEvPiS2_S2_PT_S2_S4_S2_S4_S4_S2_S4_S2_S2_S2_[_ZN4arma6lapack5gelsdIdEEvPiS2_S2_PT_S2_S4_S2_S4_S4_S2_S4_S2_S2_S2_]+0x5e): undefined reference to `wrapper2_dgelsd_'
+[7.318s] /usr/bin/ld: CMakeFiles/wall_follower.dir/src/circle_model.cpp.o: in function `void arma::lapack::gels<double>(char*, int*, int*, int*, double*, int*, double*, int*, double*, int*, int*)':
+[7.318s] circle_model.cpp:(.text._ZN4arma6lapack4gelsIdEEvPcPiS3_S3_PT_S3_S5_S3_S5_S3_S3_[_ZN4arma6lapack4gelsIdEEvPcPiS3_S3_PT_S3_S5_S3_S5_S3_S3_]+0x57): undefined reference to `wrapper2_dgels_'
+[7.318s] /usr/bin/ld: CMakeFiles/wall_follower.dir/src/circle_model.cpp.o: in function `void arma::lapack::gtsv<double>(int*, int*, double*, double*, double*, double*, int*, int*)':
+[7.318s] circle_model.cpp:(.text._ZN4arma6lapack4gtsvIdEEvPiS2_PT_S4_S4_S4_S2_S2_[_ZN4arma6lapack4gtsvIdEEvPiS2_PT_S4_S4_S4_S2_S2_]+0x4c): undefined reference to `wrapper2_dgtsv_'
+[7.319s] /usr/bin/ld: CMakeFiles/wall_follower.dir/src/circle_model.cpp.o: in function `void arma::lapack::gbsv<double>(int*, int*, int*, int*, double*, int*, int*, double*, int*, int*)':
+[7.319s] circle_model.cpp:(.text._ZN4arma6lapack4gbsvIdEEvPiS2_S2_S2_PT_S2_S2_S4_S2_S2_[_ZN4arma6lapack4gbsvIdEEvPiS2_S2_S2_PT_S2_S2_S4_S2_S2_]+0x52): undefined reference to `wrapper2_dgbsv_'
+[7.319s] /usr/bin/ld: CMakeFiles/wall_follower.dir/src/circle_model.cpp.o: in function `void arma::lapack::posv<double>(char*, int*, int*, double*, int*, double*, int*, int*)':
+[7.319s] circle_model.cpp:(.text._ZN4arma6lapack4posvIdEEvPcPiS3_PT_S3_S5_S3_S3_[_ZN4arma6lapack4posvIdEEvPcPiS3_PT_S3_S5_S3_S3_]+0x52): undefined reference to `wrapper2_dposv_'
+[7.319s] /usr/bin/ld: CMakeFiles/wall_follower.dir/src/circle_model.cpp.o: in function `arma::get_pod_type<double>::result arma::lapack::langb<double>(char*, int*, int*, int*, double*, int*, arma::get_pod_type<double>::result*)':
+[7.319s] circle_model.cpp:(.text._ZN4arma6lapack5langbIdEENS_12get_pod_typeIT_E6resultEPcPiS7_S7_PS3_S7_PS5_[_ZN4arma6lapack5langbIdEENS_12get_pod_typeIT_E6resultEPcPiS7_S7_PS3_S7_PS5_]+0x4b): undefined reference to `wrapper2_dlangb_'
+[7.319s] /usr/bin/ld: CMakeFiles/wall_follower.dir/src/circle_model.cpp.o: in function `void arma::lapack::gbtrf<double>(int*, int*, int*, int*, double*, int*, int*, int*)':
+[7.319s] circle_model.cpp:(.text._ZN4arma6lapack5gbtrfIdEEvPiS2_S2_S2_PT_S2_S2_S2_[_ZN4arma6lapack5gbtrfIdEEvPiS2_S2_S2_PT_S2_S2_S2_]+0x4c): undefined reference to `wrapper2_dgbtrf_'
+[7.319s] /usr/bin/ld: CMakeFiles/wall_follower.dir/src/circle_model.cpp.o: in function `void arma::lapack::gbtrs<double>(char*, int*, int*, int*, int*, double*, int*, int*, double*, int*, int*)':
+[7.319s] circle_model.cpp:(.text._ZN4arma6lapack5gbtrsIdEEvPcPiS3_S3_S3_PT_S3_S3_S5_S3_S3_[_ZN4arma6lapack5gbtrsIdEEvPcPiS3_S3_S3_PT_S3_S3_S5_S3_S3_]+0x57): undefined reference to `wrapper2_dgbtrs_'
+[7.319s] /usr/bin/ld: CMakeFiles/wall_follower.dir/src/circle_model.cpp.o: in function `void arma::lapack::trcon<double>(char*, char*, char*, int*, double const*, int*, double*, double*, int*, int*)':
+[7.319s] circle_model.cpp:(.text._ZN4arma6lapack5trconIdEEvPcS2_S2_PiPKT_S3_PS4_S7_S3_S3_[_ZN4arma6lapack5trconIdEEvPcS2_S2_PiPKT_S3_PS4_S7_S3_S3_]+0x5c): undefined reference to `wrapper2_dtrcon_'
+[7.319s] /usr/bin/ld: CMakeFiles/wall_follower.dir/src/circle_model.cpp.o: in function `void arma::lapack::pocon<double>(char*, int*, double const*, int*, double const*, double*, double*, int*, int*)':
+[7.319s] circle_model.cpp:(.text._ZN4arma6lapack5poconIdEEvPcPiPKT_S3_S6_PS4_S7_S3_S3_[_ZN4arma6lapack5poconIdEEvPcPiPKT_S3_S6_PS4_S7_S3_S3_]+0x51): undefined reference to `wrapper2_dpocon_'
+[7.320s] /usr/bin/ld: CMakeFiles/wall_follower.dir/src/circle_model.cpp.o: in function `void arma::lapack::gecon<double>(char*, int*, double const*, int*, double const*, double*, double*, int*, int*)':
+[7.320s] circle_model.cpp:(.text._ZN4arma6lapack5geconIdEEvPcPiPKT_S3_S6_PS4_S7_S3_S3_[_ZN4arma6lapack5geconIdEEvPcPiPKT_S3_S6_PS4_S7_S3_S3_]+0x51): undefined reference to `wrapper2_dgecon_'
+[7.320s] /usr/bin/ld: CMakeFiles/wall_follower.dir/src/circle_model.cpp.o: in function `void arma::lapack::gbcon<double>(char*, int*, int*, int*, double const*, int*, int const*, double const*, double*, double*, int*, int*)':
+[7.320s] circle_model.cpp:(.text._ZN4arma6lapack5gbconIdEEvPcPiS3_S3_PKT_S3_PKiS6_PS4_S9_S3_S3_[_ZN4arma6lapack5gbconIdEEvPcPiS3_S3_PKT_S3_PKiS6_PS4_S9_S3_S3_]+0x5e): undefined reference to `wrapper2_dgbcon_'
+[7.320s] collect2: error: ld returned 1 exit status
+[7.320s] make[2]: *** [CMakeFiles/wall_follower.dir/build.make:163: wall_follower] Error 1
+[7.320s] make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/wall_follower.dir/all] Error 2
+[7.320s] make: *** [Makefile:141: all] Error 2
+[7.322s] Invoked command in '/home/rsa/colcon_ws/build/wall_follower' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rsa/colcon_ws/install/cv_basics:/opt/ros/foxy /usr/bin/cmake --build /home/rsa/colcon_ws/build/wall_follower -- -j16 -l16

@@ -1,0 +1,26 @@
+[0.578s] Invoking command in '/home/rsa/colcon_ws/build/cv_basics': PYTHONPATH=/home/rsa/colcon_ws/install/cv_basics/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/rsa/colcon_ws/install/cv_basics --editable --build-directory /home/rsa/colcon_ws/build/cv_basics/build --no-deps install_data --install-dir /home/rsa/colcon_ws/install/cv_basics
+[0.733s] running develop
+[0.805s] running egg_info
+[0.805s] creating cv_basics.egg-info
+[0.805s] writing cv_basics.egg-info/PKG-INFO
+[0.806s] writing dependency_links to cv_basics.egg-info/dependency_links.txt
+[0.806s] writing entry points to cv_basics.egg-info/entry_points.txt
+[0.806s] writing requirements to cv_basics.egg-info/requires.txt
+[0.806s] writing top-level names to cv_basics.egg-info/top_level.txt
+[0.810s] writing manifest file 'cv_basics.egg-info/SOURCES.txt'
+[0.831s] reading manifest file 'cv_basics.egg-info/SOURCES.txt'
+[0.831s] writing manifest file 'cv_basics.egg-info/SOURCES.txt'
+[0.853s] running build_ext
+[0.853s] Creating /home/rsa/colcon_ws/install/cv_basics/lib/python3.8/site-packages/site.py
+[0.858s] Creating /home/rsa/colcon_ws/install/cv_basics/lib/python3.8/site-packages/cv-basics.egg-link (link to .)
+[0.859s] Installing img_publisher script to /home/rsa/colcon_ws/install/cv_basics/lib/cv_basics
+[0.859s] Installing img_subscriber script to /home/rsa/colcon_ws/install/cv_basics/lib/cv_basics
+[0.859s] 
+[0.859s] Installed /home/rsa/colcon_ws/build/cv_basics
+[0.859s] running install_data
+[0.860s] creating /home/rsa/colcon_ws/install/cv_basics/share/ament_index
+[0.860s] creating /home/rsa/colcon_ws/install/cv_basics/share/ament_index/resource_index
+[0.860s] creating /home/rsa/colcon_ws/install/cv_basics/share/ament_index/resource_index/packages
+[0.860s] copying resource/cv_basics -> /home/rsa/colcon_ws/install/cv_basics/share/ament_index/resource_index/packages
+[0.860s] copying package.xml -> /home/rsa/colcon_ws/install/cv_basics/share/cv_basics
+[0.881s] Invoked command in '/home/rsa/colcon_ws/build/cv_basics' returned '0': PYTHONPATH=/home/rsa/colcon_ws/install/cv_basics/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/rsa/colcon_ws/install/cv_basics --editable --build-directory /home/rsa/colcon_ws/build/cv_basics/build --no-deps install_data --install-dir /home/rsa/colcon_ws/install/cv_basics

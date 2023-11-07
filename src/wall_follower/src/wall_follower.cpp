@@ -38,8 +38,6 @@ WallFollower::WallFollower() : Node("wall_follower_node") {
   scan_data_[0] = 0.0;
   scan_data_[1] = 0.0;
   scan_data_[2] = 0.0;
-  scan_data_[3] = 0.0;
-  scan_data_[4] = 0.0;
 
   robot_pose_ = 0.0;
   prev_robot_pose_ = 0.0;
@@ -124,43 +122,43 @@ void printVector(const std::vector<double>& data) {
   std::cout << "}" << '\n';
 }
 
-double computeAverageWithoutOutliers(const std::vector<double>& data) {
-  if (data.size() < 2) {
-      throw std::runtime_error("Data set is too small");
-  }
-  // printVector(data);
+// double computeAverageWithoutOutliers(const std::vector<double>& data) {
+//   if (data.size() < 2) {
+//       throw std::runtime_error("Data set is too small");
+//   }
+//   // printVector(data);
 
-  // Step 1: Sort the data
-  std::vector<double> sortedData(data);
-  std::sort(sortedData.begin(), sortedData.end());
+//   // Step 1: Sort the data
+//   std::vector<double> sortedData(data);
+//   std::sort(sortedData.begin(), sortedData.end());
 
-  // Step 2: Compute Q1 and Q3
-  int n = sortedData.size();
-  double Q1 = (n % 2) ? sortedData[n / 4] : 0.5 * (sortedData[n / 4 - 1] + sortedData[n / 4]);
-  double Q3 = (n % 2) ? sortedData[3 * n / 4] : 0.5 * (sortedData[3 * n / 4 - 1] + sortedData[3 * n / 4]);
+//   // Step 2: Compute Q1 and Q3
+//   int n = sortedData.size();
+//   double Q1 = (n % 2) ? sortedData[n / 4] : 0.5 * (sortedData[n / 4 - 1] + sortedData[n / 4]);
+//   double Q3 = (n % 2) ? sortedData[3 * n / 4] : 0.5 * (sortedData[3 * n / 4 - 1] + sortedData[3 * n / 4]);
 
-  // Step 3: Compute IQR
-  double IQR = Q3 - Q1;
+//   // Step 3: Compute IQR
+//   double IQR = Q3 - Q1;
 
-  // Step 4: Determine outliers threshold
-  double lowerBound = Q1 - 1.5 * IQR;
-  double upperBound = Q3 + 1.5 * IQR;
+//   // Step 4: Determine outliers threshold
+//   double lowerBound = Q1 - 1.5 * IQR;
+//   double upperBound = Q3 + 1.5 * IQR;
 
-  // Step 5: Compute average without outliers
-  double sum = 0;
-  int validCount = 0;
-  for (double val : data) {
-    if (val >= lowerBound && val <= upperBound) {
-      sum += val;
-      validCount++;
-    }
-  }
+//   // Step 5: Compute average without outliers
+//   double sum = 0;
+//   int validCount = 0;
+//   for (double val : data) {
+//     if (val >= lowerBound && val <= upperBound) {
+//       sum += val;
+//       validCount++;
+//     }
+//   }
 
-  if (validCount == 0) {
-    throw std::runtime_error("All data points are outliers");
-  }
-  return sum / validCount;
-}
+//   if (validCount == 0) {
+//     throw std::runtime_error("All data points are outliers");
+//   }
+//   return sum / validCount;
+// }
 
 double computeMin(const std::vector<double>& data) {
   double min = data.at(0);
@@ -198,7 +196,7 @@ void WallFollower::scan_callback(
     // printVector(raw_scan_data);
     scan_data_[num] = computeMin(raw_scan_data);
   }
-
+  // prints scan_data_
   std::cout << "scan_data_[" << "Left" << "]" << "->" << scan_data_[1] << '\n';
   std::cout << "scan_data_[" << "Front" << "]" << "->" << scan_data_[0] << '\n';
   std::cout << "scan_data_[" << "Right" << "]" << "->" << scan_data_[2] << '\n';
@@ -249,9 +247,9 @@ void WallFollower::update_callback() {
   double escape_range = 2.0 * DEG2RAD;
   // set distances from the robot
   // the robot travels along the wall between min and max distances
-  double min_side_dist = 0.4;
+  double min_side_dist = 0.3;
   double max_side_dist = min_side_dist + 0.05;
-  double max_forward_dist = max_side_dist + 0.05;
+  double max_forward_dist = 0.3;
 
   /**
    * Wall Following cases:
@@ -308,15 +306,15 @@ void WallFollower::update_callback() {
 
 		case TB3_DRIVE_FORWARD:
       std::cout << "Drive Forward" << '\n';
-      driveRadius(LINEAR_VELOCITY, INFINITY);
-      // update_cmd_vel(LINEAR_VELOCITY, 0.0);
+      // driveRadius(LINEAR_VELOCITY, INFINITY);
+      update_cmd_vel(LINEAR_VELOCITY, 0.0);
       turtlebot3_state_num = GET_TB3_DIRECTION;
       break;
 
     case TB3_DRIVE_FORWARD_SR:
       std::cout << "Drive Forward - slight right" << '\n';
       // update_cmd_vel(LINEAR_VELOCITY, -(ANGULAR_VELOCITY-0.3));
-      driveRadius(LINEAR_VELOCITY, -min_side_dist);
+      driveRadius(LINEAR_VELOCITY, -0.2);
       turtlebot3_state_num = GET_TB3_DIRECTION;
       break;
 
@@ -353,8 +351,8 @@ void WallFollower::update_callback() {
 		 */
     case TB3_DRIVE_STOP:
       update_cmd_vel(0.0, 0.0);
-      // turtlebot3_state_num = GET_TB3_DIRECTION;
-      turtlebot3_state_num = TB3_DRIVE_STOP;
+      turtlebot3_state_num = GET_TB3_DIRECTION;
+      // turtlebot3_state_num = TB3_DRIVE_STOP;
       break;
 
     default:
