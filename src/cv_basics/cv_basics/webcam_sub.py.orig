@@ -1,0 +1,332 @@
+# Import the necessary libraries
+import rclpy  # Python library for ROS 2
+import cv2  # OpenCV library
+import numpy as np
+import tf2_ros # Handle transformations
+import tf2_geometry_msgs # Transformations
+from rclpy.node import Node  # Handles the creation of nodes
+from sensor_msgs.msg import Image  # Image is the message type
+from cv_bridge import CvBridge  # Package to convert between ROS and OpenCV Images
+from geometry_msgs.msg import PoseStamped # PoseStamped object is used to keep track of object position
+from nav_msgs.msg import Odometry # Odometry needed to correctly get object's pose
+from tf_transformations import euler_from_quaternion # Conversion between odometry quaternions to roll/pitch/yaw
+from geometry_msgs.msg import Point # Transformed pose is published as a Point message
+from tf2_ros.buffer import Buffer
+from std_msgs.msg import String
+
+class ImageSubscriber(Node):
+    """
+    Create an ImageSubscriber class, which is a subclass of the Node class.
+    """
+    def __init__(self):
+        """
+        Class constructor to set up the node
+        """
+        # Initiate the Constructor
+        super().__init__('image_subscriber')
+
+        # Create the subscriber. This subscriber will receive an Image
+        # from the '/camera/image_raw/uncompressed' topic. The queue size is 10 messages.
+        self.subscription = self.create_subscription(
+            Image,
+            '/camera/image_raw',
+            self.listener_callback,
+            10)
+        self.subscription  # prevent unused variable warning
+
+        # Used to convert between ROS and OpenCV images
+        self.br = CvBridge()
+ 
+        # Keep track of processed marker combinations
+        self.processed_combinations = set()
+        
+        # Publish color string to cylinder_color
+        self.color_pub = self.create_publisher(
+            String,
+            'cylinder_color',
+            10
+        )
+        
+        # Subscribe to odom topic
+        self.odom_subscription = self.create_subscription(
+            Odometry,
+            '/odom',
+            self.get_rotation,
+            10
+        )
+        
+        # Publish to cylinder_coord topic
+        self.cylinder_coord_publisher = self.create_publisher(
+            Point,
+            '/cylinder_coord',
+            10
+        )
+        
+        # Timer for color publisher
+        self.timer = self.create_timer(2.0, self.timer_callback)
+        
+        # Counter for number of markers
+        self.i = 0
+        
+        # Initialise tf2 listener and broadcaster
+        self.tf_buffer = Buffer()
+        self.tf_listener = tf2_ros.TransformListener(self.tf_buffer, self)
+        # self.tf_broadcaster = tf2_ros.TransformBroadcaster(self)
+        
+        self.marker_heights = {}
+
+    def timer_callback(self):
+        color_msg = String()
+        for key in self.marker_heights.keys():
+            print(key)
+            if key[0] == "pink":
+                # pink on top key[1] in our other colour
+                color_msg.data = key[1]
+            else:
+                # pink on bottom
+                color_msg.data = key[0]
+            self.i += 1
+            self.get_logger().info('Publishing: "%s"' % color_msg.data)
+            self.color_pub.publish(color_msg)
+
+    def listener_callback(self, data):
+        """
+        Callback function.
+        """
+        # Display the message on the console
+        self.get_logger().info('Receiving video frame')
+
+        # Convert ROS Image message to OpenCV image
+        current_frame = self.br.imgmsg_to_cv2(data)
+
+        # Checks current window height and width
+        frame_height, frame_width = current_frame.shape[:2]
+        print(frame_height, frame_width)
+
+        # The following code is a simple example of colour segmentation
+        # and connected components analysis
+
+        # Convert BGR image to HSV
+        hsv_frame = cv2.cvtColor(current_frame, cv2.COLOR_BGR2HSV)
+
+        # Define the color ranges for masking
+        color_ranges = {
+            'blue': ((0, 40, 90), (36, 210, 190)),
+            'pink': ((125, 65, 130), (155, 170, 210)),
+            'green': ((25, 50, 10), (60, 220, 110)),
+            'yellow': ((65, 110, 120), (110, 255, 210))
+        }
+        # Mask for blue
+        light_blue = (0, 40, 90)
+        dark_blue = (36, 210, 190)
+        mask_blue = cv2.inRange(hsv_frame, light_blue, dark_blue)
+
+        # Mask for pink
+        light_pink = (125, 65, 130)
+        dark_pink = (155, 170, 210)
+        mask_pink = cv2.inRange(hsv_frame, light_pink, dark_pink)
+
+        # Mask for green
+        light_green = (25, 50, 10)
+        dark_green = (60, 220, 110)
+        mask_green = cv2.inRange(hsv_frame, light_green, dark_green)
+
+        # Mask for yellow
+        light_yellow = (65, 110, 120)
+        dark_yellow = (110, 255, 210)
+        mask_yellow = cv2.inRange(hsv_frame, light_yellow, dark_yellow)
+
+        # Combine the two masks
+        combined_mask = cv2.bitwise_or(mask_blue, mask_pink)
+        combined_mask2 = cv2.bitwise_or(mask_green, mask_yellow)
+        combined_mask_total = cv2.bitwise_or(combined_mask, combined_mask2)
+
+        # Apply the combined mask to the original image
+        result = cv2.bitwise_and(current_frame, current_frame, mask=combined_mask_total)
+
+        # Create masks for each color and find connected components
+        masks = {}
+        for color, (lower, upper) in color_ranges.items():
+            masks[color] = cv2.inRange(hsv_frame, lower, upper)
+
+        # Run connected components for each mask
+        filtered_stats = {}
+        for color, mask in masks.items():
+            output = cv2.connectedComponentsWithStats(mask, 4, cv2.CV_32S)
+            # Get statistics for current mask, skip the background label 0
+            stats_list = [output[2][i] for i in range(1, output[2].shape[0])]
+            # Apply the filtering conditions
+            filtered_stats[color] = [stat for stat in stats_list if (stat[cv2.CC_STAT_WIDTH] > 10 and
+                                                             stat[cv2.CC_STAT_HEIGHT] > 10 and
+                                                             stat[cv2.CC_STAT_AREA] > 200)]
+        # print(filtered_stats)
+        # Now you can use filtered_stats with the find_marker_height function
+        print(filtered_stats)
+        self.marker_heights = self.find_marker_height(filtered_stats)
+        # print(marker_heights)
+
+        # Convert and transform data in marker_heights to x, y, z coordinates
+        for colour_pair, (height, angle) in self.marker_heights.items():
+            # Account for odom data in angle
+            angle = yaw_degrees + angle
+            # Convert the data in the dictionaries into a pose stamped object
+            pose_stamped = self.convert_to_pose_stamped(height, angle)
+
+            # Transform the pose stamped into the frame of the map
+            transformed_pose = self.transform_pose_to_map(pose_stamped)
+
+            # Get the x, y, z coordinates from the pose position data
+            x = transformed_pose.pose.position.x
+            y = transformed_pose.pose.position.y
+            z = transformed_pose.pose.position.z
+
+            # Publish the coordinates
+            self.publish_cylinder_coordinates(x, y, z)
+
+        # Print the height of each detected marker
+        #for color1, height in marker_heights:
+            # self.get_logger().info(f'Detected vertical marker with colors {color_pair} and height: {height}')
+            #print(f'Detected vertical marker with colors {color1} {color1[1]} and height: {height}')
+        # Display camera image
+        cv2.imshow("camera", current_frame)
+        cv2.imshow("mask", result)
+        cv2.waitKey(1)
+
+    def is_aligned_vertically(self, box1, box2, x_tolerance=10):
+        print(box1)
+        x1, _, _, _, _ = box1
+        x2, _, _, _, _ = box2
+        return abs(x1 - x2) <= x_tolerance
+    
+    # current frame width is 160px. Left, middle, right of camera corresponds to 0, 80, 160 px respectively
+    # Camera total angle is 62.2 degrees, corresponding to -31.1, 0, 31.1 respective to turtlebot
+    # This ratio gets 0.38875 degrees per pixel, need to recalculate for other sizes	
+    def find_angle(self ,left, box_width):
+        box_middle = left + (box_width / 2)
+        box_middle_angle = box_middle * 0.38875
+        return (box_middle_angle - 31.1)
+        
+    def find_marker_height(self, stats, x_tolerance=10):
+        # This dictionary will store the total height of each detected vertical marker with color pairs as keys
+        markers_data = {}
+
+        # Compare each pair of bounding boxes to find vertical alignment
+        for color1, stats1 in stats.items():
+            for color2, stats2 in stats.items():
+                if color1 == color2:
+                    continue  # Skip comparing the same color
+                for i in range(0, len(stats1)):
+                    for j in range(0, len(stats2)):
+                        # Ensure each combination is unique
+                        #if (color1, i, color2, j) in self.processed_combinations:
+                        #	continue
+                        box1 = stats1[i]
+                        box2 = stats2[j]
+
+                        # Check if the x-coordinates are aligned
+                        if self.is_aligned_vertically(box1, box2, x_tolerance):
+                            # Sum the heights if aligned
+                            y1, h1 = box1[cv2.CC_STAT_TOP], box1[cv2.CC_STAT_HEIGHT]
+                            y2, h2 = box2[cv2.CC_STAT_TOP], box2[cv2.CC_STAT_HEIGHT]
+
+                            top_color = color1 if y1 < y2 else color2
+                            bottom_colour = color2 if top_color == color1 else color1
+
+                            # Store the marker height with color pair as key
+                            angle = self.find_angle(y1, box1[cv2.CC_STAT_HEIGHT])
+                            print(angle)
+
+                              # key = top colour and bottom colour. The corresponding value pair is h1 + h2 (height) and angle
+                            markers_data[(top_color, bottom_colour)] = ((h1 + h2), angle)
+
+                            # Add the combination to the set of processed combinations
+                            self.processed_combinations.add((color1, i, color2, j))
+        return markers_data
+    
+    #### Extract the rotation of the robot in the z-axis (yaw) and the robot's z-coordinate from odom data
+    def get_rotation(self, msg):
+        global roll, pitch, yaw, yaw_degrees, z_from_odom
+        orientation_q = msg.pose.pose.orientation
+        orientation_list = [orientation_q.x, orientation_q.y, orientation_q.z, orientation_q.w]
+        (roll, pitch, yaw) = euler_from_quaternion(orientation_list)
+        # Convert yaw (radians) into degrees
+        yaw_degrees = np.degrees(yaw)
+        # Get the z-coordinate of the robot
+        z_from_odom = msg.pose.pose.position.z
+        return yaw_degrees, z_from_odom
+
+      # Helper function- gets height and angle information and makes a PoseStamped object from it
+    def convert_to_pose_stamped(self, height, angle):
+        # Create an instance of PoseStamped object
+        pose_stamped = PoseStamped()
+        
+        # Set the timestamp to the current time
+        pose_stamped.header.stamp = self.get_clock().now().to_msg()
+        
+        # Set the frame ID (frame in which the pose is expressed)
+        pose_stamped.header.frame_id = 'camera_link'
+        
+        distance = (0.0288252832636871 / height)
+        # Use the distance and angle information to convert to x, y coordinates
+        x_coord = distance * np.cos(angle)
+        y_coord = distance * np.sin(angle)
+
+        # Get the z-coordinate of the robot from odom data
+        z_coord = z_from_odom
+        
+        # Set the pose position (x, y, z)
+        pose_stamped.pose.position.x = x_coord
+        pose_stamped.pose.position.y = y_coord
+        pose_stamped.pose.position.z = z_coord
+        
+        #### Set the orientation of the pose using quaternions (right now this yields no rotation by the x axis)
+        pose_stamped.pose.orientation.x = 0.0
+        pose_stamped.pose.orientation.y = 0.0
+        pose_stamped.pose.orientation.z = 0.0
+        pose_stamped.pose.orientation.w = 1.0
+
+        return pose_stamped
+
+      # Handles the actual transform of the pose stamped object from camera_link -> map. This function should be fine as-is
+    def transform_pose_to_map(self, pose_stamped):
+        try:
+            # Get the transform from the camera frame to the map frame
+              # Params for this lookup is (source frame, target frame [which is obtained from pose stamped frame_id], waiting duration)
+            transform = self.tf_buffer.lookup_transform('map', pose_stamped.header.frame_id, rclpy.time.Time())
+
+              # Now actually use the transform to transform the pose to the map frame
+            transformed_pose = tf2_geometry_msgs.do_transform_pose(pose_stamped, transform)
+            return transformed_pose
+
+        except (tf2_ros.LookupException, tf2_ros.ConnectivityException, tf2_ros.ExtrapolationException) as error:
+            self.get_logger().error(f"Transform failed: {error}")
+            return None
+
+      # Create and publish a point message
+    def publish_cylinder_coordinates(self, x, y, z):
+        point_msg = Point()
+        point_msg.x = x
+        point_msg.y = y
+        point_msg.z = z
+        self.publisher.publish(point_msg)
+
+def main(args=None):
+    # Initialize the rclpy library
+    rclpy.init(args=args)
+
+    # Create the node
+    image_subscriber = ImageSubscriber()
+
+    # Spin the node so the callback function is called.
+    rclpy.spin(image_subscriber)
+
+    # Destroy the node explicitly
+    # (optional - otherwise it will be done automatically
+    # when the garbage collector destroys the node object)
+    image_subscriber.destroy_node()
+
+    # Shutdown the ROS client library for Python
+    rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()

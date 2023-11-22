@@ -25,6 +25,7 @@ find_package(nav_msgs REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(tf2 REQUIRED)
+find_package(wall_follower_msgs REQUIRED)
 
 ################################################################################
 # Build
@@ -38,11 +39,12 @@ set(dependencies
   "rclcpp"
   "sensor_msgs"
   "tf2"
+  "wall_follower_msgs"
 )
 
 set(EXEC_NAME "wall_follower")
 
-add_executable(${EXEC_NAME} src/wall_follower.cpp src/circle_model.cpp)
+add_executable(${EXEC_NAME} src/wall_follower.cpp)
 ament_target_dependencies(${EXEC_NAME} ${dependencies})
 
 ################################################################################

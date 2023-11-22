@@ -24,18 +24,25 @@
 #include <tf2/LinearMath/Matrix3x3.h>
 #include <tf2/LinearMath/Quaternion.h>
 
+#include "wall_follower_msgs/msg/scan.hpp"
+
 #include <string>
 #include <limits>
+#include <vector>
 
-#define DEG2RAD (M_PI / 180.0)
-#define RAD2DEG (180.0 / M_PI)
+constexpr double WHEEL_OFFSET{ 0.064 };
 
-enum Angles {CENTER, LEFT, RIGHT};
+constexpr double DEG2RAD{ M_PI / 180.0 };
+constexpr double RAD2DEG{ 180.0 / M_PI };
 
-#define LINEAR_VELOCITY  0.1
-#define ANGULAR_VELOCITY 0.6
+enum Angles : unsigned int { CENTER, LEFT, RIGHT };
 
-enum TB3_States {
+constexpr double LINEAR_VELOCITY{ 0.1 };
+constexpr double ANGULAR_VELOCITY{ 0.3 };
+
+constexpr double START_RANGE_TOLERANCE{ 0.005 };
+
+enum TB3_States : unsigned int {
   GET_TB3_DIRECTION,
   TB3_DRIVE_FORWARD,
   TB3_DRIVE_FORWARD_SL,
@@ -50,31 +57,28 @@ public:
   WallFollower();
   ~WallFollower();
 
-  // member function
-  std::string getPathFileName() const;
-
   // helper functions
-  bool inRange(double x, double y);
+  bool inStartRange(double x, double y);
   void driveRadius(double velocity, double radius);
+
+protected:
+  // Variables
+  double robot_pose_{};
+  double prev_robot_pose_{};
+  std::vector<double> scan_data_;
+  bool started_{};
+  bool off_start_range_{};
+  double startx_{};
+  double starty_{};
 
 private:
   // ROS topic publishers
   rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr cmd_vel_pub_;
+  rclcpp::Publisher<wall_follower_msgs::msg::Scan>::SharedPtr wf_scan_pub_;
 
   // ROS topic subscribers
   rclcpp::Subscription<sensor_msgs::msg::LaserScan>::SharedPtr scan_sub_;
   rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr odom_sub_;
-
-  // Variables
-  double robot_pose_ {};
-  double prev_robot_pose_ {};
-  double scan_data_[3] {};
-  double full_scan_data_[360] {};
-  double startx_{};
-  double starty_{};
-  double tolerance_{};
-  bool at_start_{};
-  std::string tb3_path_filename_;
 
   // ROS timer
   rclcpp::TimerBase::SharedPtr update_timer_;

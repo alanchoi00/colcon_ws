@@ -1,0 +1,4 @@
+source;share/print_scan_data/local_setup.bash
+source;share/print_scan_data/local_setup.dsv
+source;share/print_scan_data/local_setup.sh
+source;share/print_scan_data/local_setup.zsh

@@ -1,0 +1,10 @@
+/home/rsa/colcon_ws/src/build/print_scan_data/CMakeFiles/install/strip.dir
+/home/rsa/colcon_ws/src/build/print_scan_data/CMakeFiles/install/local.dir
+/home/rsa/colcon_ws/src/build/print_scan_data/CMakeFiles/install.dir
+/home/rsa/colcon_ws/src/build/print_scan_data/CMakeFiles/list_install_components.dir
+/home/rsa/colcon_ws/src/build/print_scan_data/CMakeFiles/rebuild_cache.dir
+/home/rsa/colcon_ws/src/build/print_scan_data/CMakeFiles/edit_cache.dir
+/home/rsa/colcon_ws/src/build/print_scan_data/CMakeFiles/test.dir
+/home/rsa/colcon_ws/src/build/print_scan_data/CMakeFiles/print_scan_data.dir
+/home/rsa/colcon_ws/src/build/print_scan_data/CMakeFiles/print_scan_data_uninstall.dir
+/home/rsa/colcon_ws/src/build/print_scan_data/CMakeFiles/uninstall.dir
