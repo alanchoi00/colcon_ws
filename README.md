@@ -1,37 +1,14 @@
-# colcon_ws
-
-Simple overview of use/purpose.
-
-## Description
-
-An in-depth paragraph about your project and overview of use.
-
-## Getting Started
-
-### Dependencies
-
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
-
-### Installing VM and ROS2 (foxy)
-
-* follow the ROS-foxy guide at https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/#pc-setup
-
-### Setting up
-
-* clone the repository into your $HOME
-```
-cd ~
-git clone <ssh url>
-```
-* create a new branch for your own work space
-  e.g.
-```
-git checkout -b Alan/workspace
-```
-* On your branch, run...
+# Steps to compile
+(assumed src.tgz is exported to ~/colcown_ws/src)
+1. Head into your colcon_ws
 ```
 cd ~/colcon_ws
+```
+2.Build the message interface package for wall-follower
+```
+colcon build --packages-select wall_follower_msgs
+```
+3. Build the rest of the packages
+```
 colcon build
 ```
-> **_NOTE:_** DON'T RUN COLCON BUILD ON THE MAIN BRANCH
